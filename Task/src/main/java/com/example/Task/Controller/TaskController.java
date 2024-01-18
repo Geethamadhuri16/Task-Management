@@ -17,35 +17,36 @@ import com.example.Task.Model.Task;
 import com.example.Task.Service.TaskService;
 
 @RestController
+@RequestMapping("/task")
 public class TaskController {
 	
 	@Autowired
 	private TaskService service;
 	
-	@PostMapping("/createTask")
+	@PostMapping("")
 	public ResponseEntity<Task> createTask(@RequestBody Task task){
 		return service.addTask(task);
 		
 		
 	}
 	
-	@PutMapping("/assign/{id}")
+	@PutMapping("/{id}")
 	public ResponseEntity<String> updateTask(@PathVariable("id") Long id,@RequestBody TaskDTO  dto){
 		return service.updateTask(id, dto);
 		
 	}
 	
-	@GetMapping("/status/{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<String> checkStatus(@PathVariable("id")Long id){
 		return service.checkStatus(id);
 	}
 	
-	@GetMapping("/DueDate/{id}")
+	@GetMapping("/dueDate/{id}")
 	public ResponseEntity<String> dueDate(@PathVariable("id")Long id){
 		return service.checkDueDate(id);
 	}
 	
-	@GetMapping("/checkByEmail/{mail}")
+	@GetMapping("checkByEmail/{mail}")
 	public ResponseEntity<List<Task>> getBymail(@PathVariable("mail")String mail){
 		return service.getByEmail(mail);
 	}
