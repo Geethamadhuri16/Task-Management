@@ -139,7 +139,20 @@ public class TaskService {
     	
     }
     
-    
+    public ResponseEntity<String> delById(Long id){
+    	try {
+    		Task t=repo.findById(id).orElse(null);
+    		if(t!=null) {
+    			repo.delete(t);
+    			return new ResponseEntity<>("deleted",HttpStatus.OK);
+    			
+    		}else {
+    			return new ResponseEntity<>(null,HttpStatus.NOT_FOUND);
+    		}
+    	}catch(Exception e) {
+    		return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+    	}
+    }
     
     
     
