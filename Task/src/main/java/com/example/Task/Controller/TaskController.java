@@ -50,6 +50,11 @@ public class TaskController {
 	public ResponseEntity<List<Task>> getBymail(@PathVariable("mail")String mail){
 		return service.getByEmail(mail);
 	}
+
+	@DeleteMapping("/{id}")
+	public ResponseEntity<String> delById(@PathVariable("id") Long id){
+		return service.delById(id);
+	}
 	
 
 }
