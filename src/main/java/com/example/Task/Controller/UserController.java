@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.Task.Model.User;
 import com.example.Task.Service.UserService;
 @CrossOrigin(origins="http://localhost:3000")
+@RestController	
+	
 public class UserController {
   @Autowired
 	    private UserService userService;
