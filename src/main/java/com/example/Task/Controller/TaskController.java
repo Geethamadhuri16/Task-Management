@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.Task.DTO.TaskDTO;
 import com.example.Task.Model.Task;
 import com.example.Task.Service.TaskService;
-
+@CrossOrigin(origins="http://localhost:3000")
 @RestController
 @RequestMapping("/task")
 public class TaskController {
