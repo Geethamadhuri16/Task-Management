@@ -1,0 +1,15 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: geethamadhurishuju@gmail.com
+    password: kwty ahsn cdmf yfcc
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        ssl:
+          trust: smtp.gmail.com
+    debug: true
